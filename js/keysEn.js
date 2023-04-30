@@ -1,265 +1,264 @@
 const keysEn = [
   {
-    lowercase: "`",
-    uppercase: "~"
+    lowercase: '`',
+    uppercase: '~',
   },
   {
-    lowercase: "1",
-    uppercase: "!"
+    lowercase: '1',
+    uppercase: '!',
   },
   {
-    lowercase: "2",
-    uppercase: "@"
+    lowercase: '2',
+    uppercase: '@',
   },
   {
-    lowercase: "3",
-    uppercase: "#"
+    lowercase: '3',
+    uppercase: '#',
   },
   {
-    lowercase: "4",
-    uppercase: "$"
+    lowercase: '4',
+    uppercase: '$',
   },
   {
-    lowercase: "5",
-    uppercase: "%"
+    lowercase: '5',
+    uppercase: '%',
   },
   {
-    lowercase: "6",
-    uppercase: "^"
+    lowercase: '6',
+    uppercase: '^',
   },
   {
-    lowercase: "7",
-    uppercase: "&"
+    lowercase: '7',
+    uppercase: '&',
   },
   {
-    lowercase: "8",
-    uppercase: "*"
+    lowercase: '8',
+    uppercase: '*',
   },
   {
-    lowercase: "9",
-    uppercase: "("
+    lowercase: '9',
+    uppercase: '(',
   },
   {
-    lowercase: "0",
-    uppercase: ")"
+    lowercase: '0',
+    uppercase: ')',
   },
   {
-    lowercase: "-",
-    uppercase: "_"
+    lowercase: '-',
+    uppercase: '_',
   },
   {
-    lowercase: "=",
-    uppercase: "+"
+    lowercase: '=',
+    uppercase: '+',
   },
   {
-    lowercase: "Backspace",
-    uppercase: "Backspace"
+    lowercase: 'Backspace',
+    uppercase: 'Backspace',
   },
   {
     lowercase: 'Tab',
-    uppercase: 'Tab'
+    uppercase: 'Tab',
   },
   {
-    lowercase: "q",
-    uppercase: "Q"
+    lowercase: 'q',
+    uppercase: 'Q',
   },
   {
-    lowercase: "w",
-    uppercase: "W"
+    lowercase: 'w',
+    uppercase: 'W',
   },
   {
-    lowercase: "e",
-    uppercase: "E"
+    lowercase: 'e',
+    uppercase: 'E',
   },
   {
-    lowercase: "r",
-    uppercase: "R"
+    lowercase: 'r',
+    uppercase: 'R',
   },
   {
-    lowercase: "t",
-    uppercase: "T"
+    lowercase: 't',
+    uppercase: 'T',
   },
   {
-    lowercase: "y",
-    uppercase: "Y"
+    lowercase: 'y',
+    uppercase: 'Y',
   },
   {
-    lowercase: "u",
-    uppercase: "U"
+    lowercase: 'u',
+    uppercase: 'U',
   },
   {
-    lowercase: "i",
-    uppercase: "I"
+    lowercase: 'i',
+    uppercase: 'I',
   },
   {
-    lowercase: "o",
-    uppercase: "O"
+    lowercase: 'o',
+    uppercase: 'O',
   },
   {
-    lowercase: "p",
-    uppercase: "P"
+    lowercase: 'p',
+    uppercase: 'P',
   },
   {
-    lowercase: "[",
-    uppercase: "{"
+    lowercase: '[',
+    uppercase: '{',
   },
   {
-    lowercase: "]",
-    uppercase: "}"
+    lowercase: ']',
+    uppercase: '}',
   },
   {
-    lowercase: "\\",
-    uppercase: "|"
+    lowercase: '\\',
+    uppercase: '|',
   },
   {
-    lowercase: "Del",
-    uppercase: "Del"
+    lowercase: 'Del',
+    uppercase: 'Del',
   },
   {
     lowercase: 'Caps',
-    uppercase: 'Caps'
+    uppercase: 'Caps',
   },
   {
-    lowercase: "a",
-    uppercase: "A"
+    lowercase: 'a',
+    uppercase: 'A',
   },
   {
-    lowercase: "s",
-    uppercase: "S"
+    lowercase: 's',
+    uppercase: 'S',
   },
   {
-    lowercase: "d",
-    uppercase: "D"
+    lowercase: 'd',
+    uppercase: 'D',
   },
   {
-    lowercase: "f",
-    uppercase: "F"
+    lowercase: 'f',
+    uppercase: 'F',
   },
   {
-    lowercase: "g",
-    uppercase: "G"
+    lowercase: 'g',
+    uppercase: 'G',
   },
   {
-    lowercase: "h",
-    uppercase: "H"
+    lowercase: 'h',
+    uppercase: 'H',
   },
   {
-    lowercase: "j",
-    uppercase: "J"
+    lowercase: 'j',
+    uppercase: 'J',
   },
   {
-    lowercase: "k",
-    uppercase: "K"
+    lowercase: 'k',
+    uppercase: 'K',
   },
   {
-    lowercase: "l",
-    uppercase: "L"
+    lowercase: 'l',
+    uppercase: 'L',
   },
   {
-    lowercase: ";",
-    uppercase: ":"
+    lowercase: ';',
+    uppercase: ':',
   },
   {
-    lowercase: "'",
-    uppercase: "\""
+    lowercase: '\'',
+    uppercase: '"',
   },
   {
     lowercase: 'Enter',
-    uppercase: 'Enter'
+    uppercase: 'Enter',
   },
   {
     lowercase: 'Shift',
-    uppercase: 'Shift'
+    uppercase: 'Shift',
   },
   {
-    lowercase: "z",
-    uppercase: "Z"
+    lowercase: 'z',
+    uppercase: 'Z',
   },
   {
-    lowercase: "x",
-    uppercase: "X"
+    lowercase: 'x',
+    uppercase: 'X',
   },
   {
-    lowercase: "c",
-    uppercase: "C"
+    lowercase: 'c',
+    uppercase: 'C',
   },
   {
-    lowercase: "v",
-    uppercase: "V"
+    lowercase: 'v',
+    uppercase: 'V',
   },
   {
-    lowercase: "b",
-    uppercase: "B"
+    lowercase: 'b',
+    uppercase: 'B',
   },
   {
-    lowercase: "n",
-    uppercase: "N"
+    lowercase: 'n',
+    uppercase: 'N',
   },
   {
-    lowercase: "m",
-    uppercase: "M"
+    lowercase: 'm',
+    uppercase: 'M',
   },
   {
-    lowercase: ",",
-    uppercase: "<"
+    lowercase: ',',
+    uppercase: '<',
   },
   {
-    lowercase: ".",
-    uppercase: ">"
+    lowercase: '.',
+    uppercase: '>',
   },
   {
-    lowercase: "/",
-    uppercase: "?"
+    lowercase: '/',
+    uppercase: '?',
   },
   {
-    lowercase: "\\",
-    uppercase: "?"
+    lowercase: '\\',
+    uppercase: '?',
   },
   {
     lowercase: '&#9650',
-    uppercase: '&#9650'
+    uppercase: '&#9650',
   },
   {
     lowercase: 'Shift',
-    uppercase: 'Shift'
+    uppercase: 'Shift',
   },
   {
     lowercase: 'Ctrl',
-    uppercase: 'Ctrl'
+    uppercase: 'Ctrl',
   },
   {
     lowercase: 'Win',
-    uppercase: 'Win'
+    uppercase: 'Win',
   },
   {
     lowercase: 'Alt',
-    uppercase: 'Alt'
+    uppercase: 'Alt',
   },
   {
     lowercase: '',
-    uppercase: ''
+    uppercase: '',
   },
   {
     lowercase: 'Alt',
-    uppercase: 'Alt'
+    uppercase: 'Alt',
   },
   {
     lowercase: 'Ctrl',
-    uppercase: 'Ctrl'
+    uppercase: 'Ctrl',
   },
   {
     lowercase: '&#9668',
-    uppercase: '&#9668'
+    uppercase: '&#9668',
   },
   {
     lowercase: '&#9660',
-    uppercase: '&#9660'
+    uppercase: '&#9660',
   },
   {
     lowercase: '&#9658',
-    uppercase: '&#9658'
-  }
+    uppercase: '&#9658',
+  },
 ];
-
 
 export default keysEn;
