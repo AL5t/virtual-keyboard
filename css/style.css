@@ -38,6 +38,11 @@ body {
 }
 
 .keyboard__hotkeys {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
   margin: 20px auto;
   padding: 10px;
   border: 1px solid #000;
@@ -67,6 +72,19 @@ body {
   background-color: blue;
 }
 
+.button_caps {
+  width: calc(var(--width-key) * 2);
+  height: var(--height-key);
+  border: 1px solid #000;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.button_caps-active {
+  background-color: green;
+}
+
 .keyboard__block {
   margin: 0 auto;
   display: flex;
@@ -88,6 +106,7 @@ body {
 
 .key_active {
   border: 2px solid #fff;
+  background-color: green;
   /* background-color: red; */
 }
 

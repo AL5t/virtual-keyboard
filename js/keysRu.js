@@ -228,8 +228,8 @@ const keysRu = [
     uppercase: 'Alt',
   },
   {
-    lowercase: '',
-    uppercase: '',
+    lowercase: ' ',
+    uppercase: ' ',
   },
   {
     lowercase: 'Alt',

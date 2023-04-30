@@ -116,8 +116,8 @@ const keysEn = [
     uppercase: 'Del',
   },
   {
-    lowercase: 'Caps',
-    uppercase: 'Caps',
+    lowercase: 'CapsLock',
+    uppercase: 'CapsLock',
   },
   {
     lowercase: 'a',
@@ -236,8 +236,8 @@ const keysEn = [
     uppercase: 'Alt',
   },
   {
-    lowercase: '',
-    uppercase: '',
+    lowercase: ' ',
+    uppercase: ' ',
   },
   {
     lowercase: 'Alt',
