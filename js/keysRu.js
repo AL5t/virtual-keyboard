@@ -112,8 +112,12 @@ const keysRu = [
     uppercase: '/',
   },
   {
-    lowercase: 'Caps',
-    uppercase: 'Caps',
+    lowercase: 'Del',
+    uppercase: 'Del',
+  },
+  {
+    lowercase: 'CapsLock',
+    uppercase: 'CapsLock',
   },
   {
     lowercase: 'ф',
@@ -202,6 +206,10 @@ const keysRu = [
   {
     lowercase: 'ю',
     uppercase: 'Ю',
+  },
+  {
+    lowercase: '.',
+    uppercase: ',',
   },
   {
     lowercase: '.',
