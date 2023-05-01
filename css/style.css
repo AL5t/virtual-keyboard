@@ -1,0 +1,162 @@
+:root {
+  --gap-key-width: 10px;
+  --gap-key-height: 15px;
+  --width-key: calc((100% - var(--gap-key-width) * 14) / 15.5);
+  --height-key: 50px;
+}
+
+@media (max-width: 600px) {
+
+  :root {
+    --gap-key-width: 5px;
+    --gap-key-height: 10px;
+  }
+
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1000px;
+}
+
+.text {
+  margin: 0 auto;
+}
+
+.text__textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.keyboard {
+
+}
+
+.keyboard__hotkeys {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 10px;
+  flex-wrap: wrap; */
+  margin: 5px auto;
+  padding: 10px;
+  /* border: 1px solid #000; */
+  background-color: #fff;
+}
+
+/* .button-lang {
+  display: flex;
+  width: calc(var(--width-key) * 2);
+  height: var(--height-key);
+  border: 1px solid #000;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.button_active {
+  color: #fff;
+  background-color: blue;
+} */
+
+.button_caps {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.button_caps-active {
+  background-color: #03b403;
+}
+
+.hotkeys {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.notice {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  font-style: italic;
+}
+
+.keyboard__block {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-key-height) var(--gap-key-width);
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--width-key);
+  height: var(--height-key);
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
+}
+
+.key_active {
+  border: 2px solid #fff;
+  background-color: #03b403;
+  /* background-color: red; */
+}
+
+.key:active {
+  border: 2px solid #fff;
+  background-color: #03b403;
+  /* background-color: red; */
+}
+
+/* @media (max-width: 600px) {
+
+  .key {
+    height: calc(var(--width-key) / 2);
+  }
+
+} */
+
+.key_double {
+  width: calc( var(--width-key) * 2 + var(--gap-key-width) );
+}
+
+.key_double-half {
+  width: calc( var(--width-key) * 2.5 + var(--gap-key-width) );
+}
+
+.key_one-quarter {
+  width: calc( var(--width-key) * 1.25 );
+}
+
+.key_one-half {
+  width: calc( var(--width-key) * 1.5 );
+}
+
+.key_space {
+  /* min-width: calc( var(--width-key) * 6 + var(--gap-key-width) * 5 ); */
+  flex-grow: 1;
+}
