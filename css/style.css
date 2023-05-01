@@ -126,6 +126,12 @@ body {
   /* background-color: red; */
 }
 
+.key:active {
+  border: 2px solid #fff;
+  background-color: #03b403;
+  /* background-color: red; */
+}
+
 /* @media (max-width: 600px) {
 
   .key {
