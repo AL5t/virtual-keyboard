@@ -177,8 +177,8 @@ function createKeyboard() {
 
   // langButton.append(engButton, ruButton);
 
-  const capsButton = document.createElement('div');
-  capsButton.classList.add('button_caps');
+  // const capsButton = document.createElement('div');
+  // capsButton.classList.add('button_caps');
 
   const hotkeys = document.createElement('p');
   hotkeys.classList.add('hotkeys');
@@ -188,7 +188,7 @@ function createKeyboard() {
   notice.classList.add('notice');
   notice.innerHTML = 'The keyboard is implemented on the OS Windows';
 
-  hotKeys.append(capsButton, hotkeys, notice);
+  hotKeys.append(hotkeys, notice);
 
   const keyboardBlock = document.createElement('div');
   keyboardBlock.classList.add('keyboard__block');
