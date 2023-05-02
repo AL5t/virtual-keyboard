@@ -5,7 +5,7 @@ const body = document.querySelector('body');
 let lang = 'Ru';
 let letterCase = 'lowercase';
 
-function showSymbolOnKey(lang, letterCase) {
+function showSymbolOnKey(selectedLang, selectedLetterCase) {
   const keyboardBlock = document.querySelector('.keyboard__block');
 
   for (let i = 0; i < 65; i += 1) {
@@ -21,7 +21,7 @@ function showSymbolOnKey(lang, letterCase) {
         key.classList.add('shift-left');
       }
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 41) {
       const key = document.createElement('div');
@@ -29,7 +29,7 @@ function showSymbolOnKey(lang, letterCase) {
       key.classList.add('key_double');
       key.classList.add('enter');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 14 || i === 28) {
       const key = document.createElement('div');
@@ -41,14 +41,14 @@ function showSymbolOnKey(lang, letterCase) {
         key.classList.add('del');
       }
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if ((i > 14 && i < 25) || (i > 29 && i < 39) || (i > 42 && i < 50)) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('letter');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 56 || i === 61) {
       const key = document.createElement('div');
@@ -60,83 +60,83 @@ function showSymbolOnKey(lang, letterCase) {
         key.classList.add('ctrl-right');
       }
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 57) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('win');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 59) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('key_space');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 54) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('arrow-up');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 62) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('arrow-left');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 63) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('arrow-down');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 64) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('arrow-right');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 55) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('shift-right');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 58) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('alt-left');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 60) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('alt-right');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else if (i === 25 || i === 26 || i === 39 || i === 40 || i === 50 || i === 51) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('letter-ru');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     } else {
       const key = document.createElement('div');
       key.classList.add('key');
 
-      key.innerHTML = `${lang[i][letterCase]}`;
+      key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
     }
   }
@@ -219,26 +219,48 @@ function clickKeyMouse() {
   const keys = document.querySelectorAll('.key');
   const keyboardBlock = document.querySelector('.keyboard__block');
   const textArea = document.querySelector('textarea');
-  const buttonCaps = document.querySelector('.button_caps'); 
+  const buttonCaps = document.querySelector('.button_caps');
 
   keyboardBlock.addEventListener('click', (event) => {
     textArea.focus();
- 
-    keys.forEach((key) => {
-      if (key.classList.contains('shift-left') || key.classList.contains('shift-right')) {
 
-      } else {
+    keys.forEach((key) => {
+      if (!(key.classList.contains('shift-left') || key.classList.contains('shift-right'))) {
         key.classList.remove('key_active');
       }
     });
 
     if (event.target.classList.contains('key')) {
       if (event.target.classList.contains('backspace')) {
-        textArea.value = textArea.value.slice(0, -1);
+        if (textArea.selectionStart === textArea.selectionEnd && textArea.selectionStart !== 0) {
+          const prevCursor = textArea.selectionStart;
+          textArea.value = textArea.value.slice(0, textArea.selectionStart - 1)
+            + textArea.value.slice(textArea.selectionStart, textArea.value.length);
+          textArea.selectionStart = prevCursor - 1;
+          textArea.selectionEnd = prevCursor - 1;
+        } else {
+          const prevCursor = textArea.selectionStart;
+          textArea.value = textArea.value.slice(0, textArea.selectionStart)
+            + textArea.value.slice(textArea.selectionEnd, textArea.value.length);
+          textArea.selectionStart = prevCursor;
+          textArea.selectionEnd = prevCursor;
+        }
       } else if (event.target.classList.contains('tab')) {
-        textArea.value = textArea.value + '\t';
+        textArea.value += '\t';
       } else if (event.target.classList.contains('del')) {
-        textArea.value = textArea.value.slice(0, -1);
+        if (textArea.selectionStart === textArea.selectionEnd) {
+          const prevCursor = textArea.selectionStart;
+          textArea.value = textArea.value.slice(0, textArea.selectionStart)
+            + textArea.value.slice(textArea.selectionStart + 1, textArea.value.length);
+          textArea.selectionStart = prevCursor;
+          textArea.selectionEnd = prevCursor;
+        } else {
+          const prevCursor = textArea.selectionStart;
+          textArea.value = textArea.value.slice(0, textArea.selectionStart)
+            + textArea.value.slice(textArea.selectionEnd, textArea.value.length);
+          textArea.selectionStart = prevCursor;
+          textArea.selectionEnd = prevCursor;
+        }
       } else if (event.target.classList.contains('caps')) {
         if (lang === 'En') {
           if (keys[15].textContent === keys[15].textContent.toLowerCase()) {
@@ -258,7 +280,7 @@ function clickKeyMouse() {
             }
             buttonCaps.classList.remove('button_caps-active');
           }
-        } else {
+        } else if (lang === 'Ru') {
           if (keys[15].textContent === keys[15].textContent.toLowerCase()) {
             letterCase = 'uppercase';
             for (let i = 0; i < 65; i += 1) {
@@ -277,41 +299,65 @@ function clickKeyMouse() {
             buttonCaps.classList.remove('button_caps-active');
           }
         }
-
       } else if (event.target.classList.contains('enter')) {
         textArea.value += '\n';
       } else if (event.target.classList.contains('shift-left') || event.target.classList.contains('shift-right')) {
         if (lang === 'En') {
           if (keys[15].textContent === keys[15].textContent.toLowerCase()) {
             for (let i = 0; i < 65; i += 1) {
-                keys[i].innerHTML = keysEn[i].uppercase;
+              keys[i].innerHTML = keysEn[i].uppercase;
             }
+            letterCase = 'uppercase';
             document.querySelector('.shift-left').classList.add('key_active');
             document.querySelector('.shift-right').classList.add('key_active');
           } else {
             for (let i = 0; i < 65; i += 1) {
-                keys[i].innerHTML = keysEn[i].lowercase;
+              keys[i].innerHTML = keysEn[i].lowercase;
             }
+            letterCase = 'lowercase';
             document.querySelector('.shift-left').classList.remove('key_active');
             document.querySelector('.shift-right').classList.remove('key_active');
           }
-        } else {
+        } else if (lang === 'Ru') {
           if (keys[15].textContent === keys[15].textContent.toLowerCase()) {
             for (let i = 0; i < 65; i += 1) {
-                keys[i].innerHTML = keysRu[i].uppercase;
+              keys[i].innerHTML = keysRu[i].uppercase;
             }
+            letterCase = 'uppercase';
             document.querySelector('.shift-left').classList.add('key_active');
             document.querySelector('.shift-right').classList.add('key_active');
           } else {
             for (let i = 0; i < 65; i += 1) {
-                keys[i].innerHTML = keysRu[i].lowercase;
+              keys[i].innerHTML = keysRu[i].lowercase;
             }
+            letterCase = 'lowercase';
             document.querySelector('.shift-left').classList.remove('key_active');
             document.querySelector('.shift-right').classList.remove('key_active');
           }
         }
       } else if (event.target.classList.contains('ctrl-left') || event.target.classList.contains('ctrl-right') || event.target.classList.contains('alt-right') || event.target.classList.contains('win')) {
-
+        textArea.value += '';
+      } else if (event.target.classList.contains('alt-left')) {
+        if (document.querySelector('.shift-left').classList.contains('key_active') || document.querySelector('.shift-right').classList.contains('key_active')) {
+          if (lang === 'En') {
+            lang = 'Ru';
+            for (let i = 0; i < 65; i += 1) {
+              keys[i].innerHTML = keysRu[i][letterCase];
+            }
+            for (let i = 0; i < 65; i += 1) {
+              keys[i].innerHTML = keysRu[i][letterCase];
+            }
+          } else {
+            lang = 'En';
+            for (let i = 0; i < 65; i += 1) {
+              keys[i].innerHTML = keysEn[i][letterCase];
+            }
+            for (let i = 0; i < 65; i += 1) {
+              keys[i].innerHTML = keysEn[i][letterCase];
+            }
+          }
+        }
+        textArea.value += '';
       } else {
         textArea.value += event.target.textContent;
       }
@@ -342,10 +388,9 @@ function clickKeyKeyboard() {
     } else if (event.code === 'AltLeft') {
       event.preventDefault();
       if (document.querySelector('.shift-left').classList.contains('key_active') || document.querySelector('.shift-right').classList.contains('key_active')) {
-        console.log(lang);
         if (lang === 'En') {
           lang = 'Ru';
-          // if (document.querySelector('.buttons_caps').classList.contains('buttons_caps-active')) {
+          // if(document.querySelector('.buttons_caps').classList.contains('buttons_caps-active')) {
           //   for (let i = 0; i < 65; i += 1) {
           //     keys[i].innerHTML = keysRu[i].uppercase;
           //   }
@@ -359,7 +404,7 @@ function clickKeyKeyboard() {
           // }
         } else {
           lang = 'En';
-          // if (document.querySelector('.buttons_caps').classList.contains('buttons_caps-active')) {
+          // if(document.querySelector('.buttons_caps').classList.contains('buttons_caps-active')) {
           //   for (let i = 0; i < 65; i += 1) {
           //     keys[i].innerHTML = keysEn[i].uppercase;
           //   }
@@ -369,7 +414,6 @@ function clickKeyKeyboard() {
           //   }
           // }
         }
-        console.log(lang);
       }
       document.querySelector('.alt-left').classList.add('key_active');
     } else if (event.code === 'AltRight') {
@@ -412,7 +456,7 @@ function clickKeyKeyboard() {
       document.querySelector('.arrow-down').classList.add('key_active');
     } else if (event.key === 'Tab') {
       event.preventDefault();
-      textArea.value = textArea.value + '\t';
+      textArea.value += '\t';
       document.querySelector('.tab').classList.add('key_active');
     } else if (event.code === 'CapsLock') {
       if (lang === 'En') {
@@ -433,7 +477,7 @@ function clickKeyKeyboard() {
           }
           buttonCaps.classList.remove('button_caps-active');
         }
-      } else {
+      } else if (lang === 'Ru') {
         if (keys[15].textContent === keys[15].textContent.toLowerCase()) {
           letterCase = 'uppercase';
           for (let i = 0; i < 65; i += 1) {
@@ -441,7 +485,6 @@ function clickKeyKeyboard() {
               keys[i].innerHTML = keysRu[i].uppercase;
             }
           }
-          buttonCaps.classList.add('button_caps-active');
         } else {
           letterCase = 'lowercase';
           for (let i = 0; i < 65; i += 1) {
@@ -449,7 +492,6 @@ function clickKeyKeyboard() {
               keys[i].innerHTML = keysRu[i].lowercase;
             }
           }
-          buttonCaps.classList.remove('button_caps-active');
         }
       }
       document.querySelector('.caps').classList.add('key_active');
@@ -461,24 +503,24 @@ function clickKeyKeyboard() {
         }
       });
     }
-  })
+  });
 
   document.addEventListener('keyup', (event) => {
     if (event.code === 'ShiftLeft') {
       if (lang === 'En') {
-          for (let i = 0; i < 65; i += 1) {
-            keys[i].innerHTML = keysEn[i][letterCase];
-          }
-          for (let i = 0; i < 65; i += 1) {
-            keys[i].innerHTML = keysEn[i][letterCase];
-          }
+        for (let i = 0; i < 65; i += 1) {
+          keys[i].innerHTML = keysEn[i][letterCase];
+        }
+        for (let i = 0; i < 65; i += 1) {
+          keys[i].innerHTML = keysEn[i][letterCase];
+        }
       } else {
-          for (let i = 0; i < 65; i += 1) {
-            keys[i].innerHTML = keysRu[i][letterCase];
-          }
-          for (let i = 0; i < 65; i += 1) {
-            keys[i].innerHTML = keysRu[i][letterCase];
-          }
+        for (let i = 0; i < 65; i += 1) {
+          keys[i].innerHTML = keysRu[i][letterCase];
+        }
+        for (let i = 0; i < 65; i += 1) {
+          keys[i].innerHTML = keysRu[i][letterCase];
+        }
       }
       document.querySelector('.shift-left').classList.remove('key_active');
     } else if (event.code === 'ShiftRight') {
