@@ -34,10 +34,6 @@ body {
   box-sizing: border-box;
 }
 
-.keyboard {
-
-}
-
 .keyboard__hotkeys {
   display: flex;
   justify-content: space-between;
