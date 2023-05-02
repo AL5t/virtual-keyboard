@@ -425,7 +425,6 @@ function clickKeyKeyboard() {
 
   document.addEventListener('keydown', (event) => {
     textArea.focus();
-    console.log(event);
     // console.log(event.key);
     // console.log(event);
     if (event.code === 'ControlLeft') {
