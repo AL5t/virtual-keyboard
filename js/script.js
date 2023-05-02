@@ -168,7 +168,7 @@ function showSymbolOnKey(selectedLang, selectedLetterCase) {
 
       key.innerHTML = `${selectedLang[i][selectedLetterCase]}`;
       keyboardBlock.append(key);
-    } else if (i === 25 || i === 26 || i === 39 || i === 40 || i === 50 || i === 51) {
+    } else if (i === 0 || i === 25 || i === 26 || i === 39 || i === 40 || i === 50 || i === 51) {
       const key = document.createElement('div');
       key.classList.add('key');
       key.classList.add('letter-ru');
