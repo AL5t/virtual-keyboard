@@ -2,8 +2,29 @@ import keysEn from './keysEn.js';
 import keysRu from './keysRu.js';
 
 const body = document.querySelector('body');
-let lang = 'Ru';
+let lang;
 let letterCase = 'lowercase';
+
+function getLang() {
+  if (localStorage.getItem('lang') === 'Ru') {
+    lang = 'Ru';
+  } else {
+    lang = 'En';
+  }
+}
+getLang();
+
+function setLocalStorage() {
+  localStorage.setItem('lang', lang);
+}
+window.addEventListener('beforeunload', setLocalStorage);
+
+function getLocalStorage() {
+  if (localStorage.getItem('lang')) {
+    lang = localStorage.getItem('lang');
+  }
+}
+window.addEventListener('load', getLocalStorage);
 
 function showSymbolOnKey(selectedLang, selectedLetterCase) {
   const keyboardBlock = document.querySelector('.keyboard__block');
@@ -341,6 +362,7 @@ function clickKeyMouse() {
         if (document.querySelector('.shift-left').classList.contains('key_active') || document.querySelector('.shift-right').classList.contains('key_active')) {
           if (lang === 'En') {
             lang = 'Ru';
+            setLocalStorage();
             for (let i = 0; i < 65; i += 1) {
               keys[i].innerHTML = keysRu[i][letterCase];
             }
@@ -349,6 +371,7 @@ function clickKeyMouse() {
             }
           } else {
             lang = 'En';
+            setLocalStorage();
             for (let i = 0; i < 65; i += 1) {
               keys[i].innerHTML = keysEn[i][letterCase];
             }
@@ -357,9 +380,8 @@ function clickKeyMouse() {
             }
           }
         }
-        textArea.value += '';
       } else {
-        textArea.value += event.target.textContent;
+        textArea.value += '';
       }
       // event.target.classList.add('key_active');
       // console.log(event.target);
@@ -390,6 +412,7 @@ function clickKeyKeyboard() {
       if (document.querySelector('.shift-left').classList.contains('key_active') || document.querySelector('.shift-right').classList.contains('key_active')) {
         if (lang === 'En') {
           lang = 'Ru';
+          setLocalStorage();
           // if(document.querySelector('.buttons_caps').classList.contains('buttons_caps-active')) {
           //   for (let i = 0; i < 65; i += 1) {
           //     keys[i].innerHTML = keysRu[i].uppercase;
@@ -404,6 +427,7 @@ function clickKeyKeyboard() {
           // }
         } else {
           lang = 'En';
+          setLocalStorage();
           // if(document.querySelector('.buttons_caps').classList.contains('buttons_caps-active')) {
           //   for (let i = 0; i < 65; i += 1) {
           //     keys[i].innerHTML = keysEn[i].uppercase;
