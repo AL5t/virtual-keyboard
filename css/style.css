@@ -116,11 +116,13 @@ body {
   box-sizing: border-box;
   background-color: #000;
   color: #fff;
+  transition: all 0.1s;
 }
 
 .key_active {
   border: 2px solid #fff;
   background-color: #03b403;
+  transition: all 0.1s;
   /* background-color: red; */
 }
 
